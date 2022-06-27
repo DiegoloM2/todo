@@ -6,7 +6,7 @@ module.exports = {
   entry: "./src/entry.jsx",
   output: {
     path: path.resolve(__dirname),
-    filename: "./src/bundle.js"
+    filename: "./bundle.js"
   },
   module: {
     rules: [

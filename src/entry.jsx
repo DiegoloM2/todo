@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './root';
 import { createStore } from "redux";
-import reducer from "./reducer.jsx";
+import reducer from "./reducers/reducer.jsx";
 
 document.addEventListener("DOMContentLoaded", () => {
     const store = createStore(reducer);
