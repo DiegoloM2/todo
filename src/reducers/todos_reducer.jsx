@@ -20,12 +20,8 @@ const todosReducer = (state = initialState, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_TODO: 
-            let keys = Object.keys(state).map ( key => (parseInt(key)))
-            let idx = Math.max(...keys) + 1;
-            let todo = {}
-            action.todo.id = idx;
-            todo[idx] = action.todo;
-            return { ...state, ...todo };
+
+            return { ...state, ...{[action.todo.id] : action.todo} };
 
         case RECEIVE_TODOS:
             let todos = {} 
