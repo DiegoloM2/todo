@@ -7,13 +7,7 @@ const stepsReducer = function (state = {}, action) {
 
 
         case RECEIVE_STEP:
-            let keys = Object.keys(state).map ( key => (parseInt(key)))
-            let idx = Math.max(...keys) + 1;
-            let step = {}
-            action.step.id = idx;
-            step[idx] = action.step;
-            return { ...state, ...step }; 
-
+            return { ...state, ...{[action.step.id] : action.step} };
 
         case RECEIVE_STEPS: 
             let steps = {} 

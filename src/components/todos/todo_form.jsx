@@ -42,8 +42,8 @@ class TodoForm extends React.Component {
         let CheckBox = () => (this.state.done ? <input type = "checkbox" name = "done" value = "done" onChange = { this.onChangeDone } checked />: <input type = "checkbox" name = "done" value = "done" onChange = { this.onChangeDone } />);
         return (
             <form method = "POST" onSubmit = {this.onSubmitForm}>
-                <input type = "text" placeholder="title" name = "title" value = {this.state.title} onChange = {this.onChangeTextInput('title')}/>
-                <input type = "text" placeholder = "body" name = "body" value = { this.state.body } onChange = {this.onChangeTextInput("body")} />
+                <input type = "text" placeholder="title" name = "title" value = {this.state.title} onChange = {this.onChangeTextInput('title')} required/>
+                <input type = "text" placeholder = "body" name = "body" value = { this.state.body } onChange = {this.onChangeTextInput("body")} required/>
                 <CheckBox /> 
 
                 <button type = "submit">Create</button>
