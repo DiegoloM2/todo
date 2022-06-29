@@ -1,11 +1,16 @@
 import React from 'react';
+import ConnectedTodoList from "./todos/todoListContainer.jsx";
 
 class App extends React.Component {
     constructor (props) {
         super(props);
     }
     render () {
-        return <h1>Your App!</h1>
+        return (
+            <div>
+                <ConnectedTodoList />
+            </div>
+        )
     }
 } 
 export default App;
