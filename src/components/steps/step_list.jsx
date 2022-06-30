@@ -8,14 +8,14 @@ class StepList extends React.Component {
     }
 
     render () {
-
-        return (<div>
-            <ul>
+        return (
+        <div className = "">
+            <ol>
                 {this.props.steps.map(
                     (step, idx) => (
                     <StepListItemContainer key = {idx} step = {step} />)
                 )}
-            </ul>
+            </ol>
 
             <StepForm receiveStep = {this.props.receiveStep} todo_id = {this.props.todo_id} />
         </div>)

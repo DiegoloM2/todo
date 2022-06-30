@@ -12,11 +12,10 @@ class StepListItem extends React.Component {
 
     render () {
         return (
-        <div>
-            <h4>{this.props.step.title}</h4>
-            <p>{this.props.step.body}</p>
-            <button onClick = {this.removeStep}>del</button>
-        </div>)
+        <li className = "p-1">
+            <p className = "d-inline">{this.props.step.body}</p>
+            <a role = "button" onClick = {this.removeStep} className = "float-end me-5"><i className="fa fa-trash-o"></i></a>
+        </li>)
     }
 }
 

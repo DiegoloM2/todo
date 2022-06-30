@@ -31,12 +31,21 @@ class TodoItem extends React.Component {
     }
 
     render () {
+
         const RenderTodoDetail = ({ detail }) => (detail ? <ConnectedTodoDetailView todo = {this.props.todo} />: '')
+        var doneClass = "fa-solid fa-square-check";
+        if (this.props.todo.done) doneClass += " done";
         return (
-            <li>
-                <p className = "todo-title" onClick = {this.show}>{this.props.todo.title}</p> 
-                <button onClick = { this.receiveTodo }>{this.props.todo.done ? "undo": "done" }</button>
-                <RenderTodoDetail detail = {this.state.detail} />
+            <li className ="list-group-item d-flex justify-content-between align-items-start">
+                <div className = "ms-2 me-auto"> 
+                    <a className = "fw-bold fs-3" role = "button" onClick = { this.show }>{this.props.todo.title} </a>
+                    <RenderTodoDetail detail = {this.state.detail}/>
+                </div>
+
+                <div>
+                    <a role = "button" onClick = { this.receiveTodo } className = "m-2"><i className={doneClass}></i></a>
+                    <a role = "button"onClick = {this.removeTodo} className = "m-2"><i className="fa fa-trash-o"></i></a>
+                </div>
             </li>
         )
     }

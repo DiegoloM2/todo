@@ -7,5 +7,6 @@ export const stepsByTodoId = (state, todoId) => {
     Object.values(state.steps).forEach(step => {
         if (step.todo_id === todoId) steps.push(step);
     } )
+
     return steps;
 }
