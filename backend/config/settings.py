@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #local apps
     'todo.apps.TodoConfig',
+    'api.apps.ApiConfig',
 
     #3rd party apps
     "rest_framework"
