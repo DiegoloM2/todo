@@ -13,10 +13,14 @@ class TodoList extends React.Component {
         this.props.toggleForm();
     }
 
+    componentWillMount() {
+        this.props.fetchTodos();
+    }
+
     render () {
         return (
         <div>
-            {this.props.form ? <TodoForm receiveTodo = {this.props.receiveTodo} toggleForm = {this.props.toggleForm} submit = {this.submit}/>: ''}
+            {this.props.form ? <TodoForm createTodo = {this.props.createTodo} toggleForm = {this.props.toggleForm} submit = {this.submit}/>: ''}
 
             <ul className = {this.props.form ? "blurred list-group": "list-group"}>
                 <h2 className = "m-2">Todo List

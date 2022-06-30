@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #local apps
     'todo.apps.TodoConfig',
     'api.apps.ApiConfig',
+    'pages.apps.PagesConfig',
 
     #3rd party apps
     "rest_framework"
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [f"{BASE_DIR}"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,7 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+#STatic files
+STATIC_URL = '/frontend/'
+STATICFILES_DIRS = [f'{BASE_DIR}/frontend'] # new
+STATIC_ROOT = f'{BASE_DIR}/staticfiles' # new
+STATICFILES_FINDERS = [ # new
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
