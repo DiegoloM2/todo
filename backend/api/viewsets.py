@@ -3,9 +3,7 @@ from todo.models import Todo
 from .serializers import TodoSerializer
 from rest_framework import mixins
 
-class TodoViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
-            mixins.RetrieveModelMixin, mixins.DestroyModelMixin, 
-            viewsets.GenericViewSet): 
+class TodoViewSet(viewsets.ModelViewSet): 
 
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
