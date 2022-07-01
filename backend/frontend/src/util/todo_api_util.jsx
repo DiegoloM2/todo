@@ -19,6 +19,23 @@ export async function createTodo (todo) {
 
     return new Promise((success, failure) => {
         success(todo)
+
     })
     
+}
+
+export async function deleteTodo(id) {
+    let csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+    let response = await fetch(`api/todo/${id}`, {
+        method:"DELETE", 
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken, 
+            mode: 'same-origin',
+          },
+    })
+
+    return new Promise( (success, failure) => {
+        success();
+    })
 }

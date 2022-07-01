@@ -1,12 +1,12 @@
-const RECEIVE_ERRORS = "RECEIVE_ERRORS";
-const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
-const receiveErrors = (error) => ({
+export const receiveErrors = (errors) => ({
     type: RECEIVE_ERRORS, 
-    error: error
+    errors: errors
 })
 
-const clearErrors = (error) => ({
+export const clearErrors = (error) => ({
     type: CLEAR_ERRORS, 
     error: error
 })

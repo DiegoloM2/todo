@@ -13,8 +13,8 @@ const todosReducer = (state = {}, action) => {
             let todos = {} 
             
             action.todos.map(
-                (todo, idx) => {
-                    todos[idx] = todo;
+                (todo) => {
+                    todos[todo.id] = todo;
                 })  
                 
             return todos;

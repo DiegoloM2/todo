@@ -27,7 +27,7 @@ class TodoItem extends React.Component {
     }
 
     removeTodo () {
-        this.props.removeTodo(this.props.todo);
+        if (confirm("Are you sure you want to delete this?")) this.props.deleteTodo(this.props.todo);
     }
 
     render () {

@@ -5,11 +5,6 @@ class TodoDetailView extends React.Component {
     constructor (props) {
         super(props);
         this.todo = this.props.todo;
-        this.removeTodo = this.removeTodo.bind(this);
-    }
-
-    removeTodo () {
-        this.props.removeTodo(this.props.todo);
     }
 
 
@@ -21,7 +16,6 @@ class TodoDetailView extends React.Component {
                 <hr />
                 <StepListContainer todo_id = {this.todo.id}/>
 
-                {/* <button onClick = {this.removeTodo}>del</button>  */}
                 
             </div>
         )
