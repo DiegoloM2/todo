@@ -134,6 +134,7 @@ STATICFILES_DIRS = [f'{BASE_DIR}/frontend'] # new
 STATIC_ROOT = f'{BASE_DIR}/staticfiles' # new
 STATICFILES_FINDERS = [ # new
     "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
 

@@ -9,3 +9,10 @@ class Todo(models.Model):
 
     def __str__(self): 
         return self.title
+
+class Step(models.Model):
+    body = models.TextField(blank = False)
+    todo = models.ForeignKey(Todo, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.body

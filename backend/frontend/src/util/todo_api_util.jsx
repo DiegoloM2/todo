@@ -39,3 +39,21 @@ export async function deleteTodo(id) {
         success();
     })
 }
+
+// export async function updateTodo (todo) {
+//     let csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+//     let response = await fetch("api/todo/", {
+//         method:"PUT", 
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'X-CSRFToken': csrfToken, 
+//             mode: 'same-origin',
+//           },
+//         body:JSON.stringify(todo),
+//     })
+
+//     return new Promise((success, failure) => {
+//         success(todo)
+
+//     })
+// } 
