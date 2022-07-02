@@ -32,14 +32,14 @@ class TodoItem extends React.Component {
 
     render () {
 
-        const RenderTodoDetail = ({ detail }) => (detail ? <ConnectedTodoDetailView todo = {this.props.todo} />: '')
+        const RenderTodoDetail = ({ detail }) => (detail ? <ConnectedTodoDetailView todo = {this.props.todo} /> : '')
         var doneClass = "fa-solid fa-square-check";
         if (this.props.todo.done) doneClass += " done";
         return (
             <li className ="list-group-item d-flex justify-content-between align-items-start">
                 <div className = "ms-2 me-auto"> 
                     <a className = "fw-bold fs-3" role = "button" onClick = { this.show }>{this.props.todo.title} </a>
-                    <RenderTodoDetail detail = {this.state.detail}/>
+                    <ConnectedTodoDetailView todo = {this.props.todo} detail = {this.state.detail}/>
                 </div>
 
                 <div>

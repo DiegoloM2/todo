@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
 
     #3rd party apps
-    "rest_framework"
+    "rest_framework", 
+    "crispy_forms"
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [f"{BASE_DIR}"],
+        'DIRS': [f"{BASE_DIR}/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,4 +143,11 @@ STATICFILES_FINDERS = [ # new
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated', # new
+    ]
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = "/"

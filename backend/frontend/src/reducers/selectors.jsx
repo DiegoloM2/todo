@@ -5,7 +5,7 @@ export const allTodos = (state) => {
 export const stepsByTodoId = (state, todoId) => {
     let steps = [];
     Object.values(state.steps).forEach(step => {
-        if (step.todo_id === todoId) steps.push(step);
+        if (step.todo_id === todoId || step.todo === todoId) steps.push(step);
     } )
 
     return steps;

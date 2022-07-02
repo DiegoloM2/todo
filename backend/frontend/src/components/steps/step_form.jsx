@@ -8,7 +8,7 @@ class StepForm extends React.Component {
         this.state = {
                 id: createUniqueId(),
                 body: '', 
-                todo_id: this.props.todo_id,
+                todo: this.props.todo_id,
         }
 
         this.onChangeTextInput = onChangeTextInput.bind(this);
@@ -17,7 +17,7 @@ class StepForm extends React.Component {
 
     submitForm (e) {
         e.preventDefault();
-        this.props.receiveStep(this.state);
+        this.props.createStep(this.state);
     } 
 
 

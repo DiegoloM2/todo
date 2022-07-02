@@ -13,16 +13,16 @@ const stepsReducer = function (state = {}, action) {
             let steps = {} 
                 
             action.steps.map(
-                (step, idx) => {
-                    steps[idx] = step;
+                (step) => {
+                    steps[step.id] = step;
                 })  
                 
-            return steps;
+            return {...state, ...steps};
 
 
         case REMOVE_STEP: 
             let updated = {...state};  
-            delete updated[action.step.id];
+            delete updated[action.id];
             return updated;
 
 

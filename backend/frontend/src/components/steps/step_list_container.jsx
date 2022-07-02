@@ -1,10 +1,11 @@
 import StepList from "./step_list.jsx";
-import { receiveStep, removeStep } from '../../actions/step_actions.jsx';
+import { createStep, removeStep, fetchSteps } from '../../actions/step_actions.jsx';
 import { stepsByTodoId } from "../../reducers/selectors.jsx";
 import { connect } from "react-redux";
 
 const mapDispatchToProps = (dispatch) => ({
-    receiveStep: (step) =>  dispatch(receiveStep(step)), 
+    fetchSteps: (todoId) => dispatch(fetchSteps(todoId)),
+    createStep: (step) =>  dispatch(createStep(step)), 
     removeStep: (step) => dispatch(removeStep(step))
 })
 

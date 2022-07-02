@@ -11,10 +11,10 @@ class TodoDetailView extends React.Component {
     render () {
 
         return (
-            <div>
+            <div className = {this.props.detail? "": "d-none"}>
                 <h4 className='mt-2'>{this.todo.body}</h4>
                 <hr />
-                <StepListContainer todo_id = {this.todo.id}/>
+                <StepListContainer todo_id = {this.todo.id} />
 
                 
             </div>

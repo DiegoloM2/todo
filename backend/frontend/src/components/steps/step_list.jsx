@@ -7,6 +7,10 @@ class StepList extends React.Component {
         super(props);
     }
 
+    componentWillMount(){
+        this.props.fetchSteps(this.props.todo_id);
+    }
+
     render () {
         return (
         <div className = "">
@@ -17,7 +21,7 @@ class StepList extends React.Component {
                 )}
             </ol>
 
-            <StepForm receiveStep = {this.props.receiveStep} todo_id = {this.props.todo_id} />
+            <StepForm createStep = {this.props.createStep} todo_id = {this.props.todo_id} />
         </div>)
     }
 }

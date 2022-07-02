@@ -1,8 +1,10 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
+from django.contrib.auth.views import LoginView
 # Create your models here.
 
 class Todo(models.Model): 
+    owner = models.ForeignKey(get_user_model(), on_delete = models.CASCADE)
     title = models.CharField(max_length = 200, blank=False)
     body = models.TextField(blank = False )
     done = models.BooleanField(default = False)
